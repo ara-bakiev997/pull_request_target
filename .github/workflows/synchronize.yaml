@@ -1,7 +1,6 @@
 name: synchronize
 
 on:
-
   pull_request_target:
     types: [synchronize]
 
@@ -12,5 +11,5 @@ jobs:
     steps:
       - run: echo pull_request_target synchronize
 
-      - run: echo ${{ gitverse.ref_name }}
-      - run: echo "${{ toJson(gitverse) }}"
+      - run: echo ${{ github.ref_name }}
+      - run: echo "${{ toJson(github) }}"
