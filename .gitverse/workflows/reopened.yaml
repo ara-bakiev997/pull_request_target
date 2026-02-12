@@ -1,0 +1,16 @@
+name: reopened
+
+on:
+
+  pull_request_target:
+    types: [reopened]
+
+jobs:
+  reopened:
+    name: reopened
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo pull_request_target reopened
+
+      - run: echo ${{ gitverse.ref_name }}
+      - run: echo "${{ toJson(gitverse) }}"
