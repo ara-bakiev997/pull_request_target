@@ -1,0 +1,16 @@
+name: synchronize
+
+on:
+
+  pull_request_target:
+    types: [synchronize]
+
+jobs:
+  synchronize:
+    name: synchronize
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo pull_request_target synchronize
+
+      - run: echo ${{ gitverse.ref_name }}
+      - run: echo "${{ toJson(gitverse) }}"
