@@ -1,0 +1,16 @@
+name: edited
+
+on:
+
+  pull_request_target:
+    types: [edited]
+
+jobs:
+  edited:
+    name: edited
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo pull_request_target edited
+
+      - run: echo ${{ gitverse.ref_name }}
+      - run: echo "${{ toJson(gitverse) }}"
