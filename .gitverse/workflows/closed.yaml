@@ -1,0 +1,16 @@
+name: closed
+
+on:
+
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  closed:
+    name: closed
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo pull_request_target closed
+
+      - run: echo ${{ gitverse.ref_name }}
+      - run: echo "${{ toJson(gitverse) }}"
